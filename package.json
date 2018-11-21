@@ -1,24 +1,25 @@
 {
-  "name": "react-sketch",
+  "name": "mark-tool",
   "version": "0.4.4",
   "description": "Sketch Element for React based applications, backed-up by fabricjs as its core",
   "keywords": [
     "react",
     "canvas",
-    "sketch",
+    "marktool",
+    "pexraytech",
     "fabricjs",
     "fabric.js"
   ],
   "author": {
-    "name": "Thomas Bolis",
-    "email": "thomas.bolis@gmail.com"
+    "name": "Hai Nguyen",
+    "email": "hai.nguyen@pexraytech.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tbolis/react-sketch.git"
+    "url": "https://github.com/Pexraytech/MarkTool.git"
   },
   "bugs": {
-    "url": "https://github.com/tbolis/react-sketch/issues"
+    "url": "https://github.com/Pexraytech/MarkTool/issues"
   },
   "license": "MIT",
   "main": "./lib",

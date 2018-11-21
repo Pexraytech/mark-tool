@@ -33,7 +33,7 @@ Tested with node versions 6,7,8.
 Import the relevant MarkTool component and use it, you can find more on the examples folder of the project
 
 ```javascript
-import {MarkTool, Tools} from 'react-sketch';
+import {MarkTool, Tools} from 'mark-tool';
 
 class MarkToolDemo extends React.Component {
      render() {
@@ -105,14 +105,3 @@ See https://github.com/Pexraytech/MarkTool/blob/master/CHANGELOG.md
 ## License
 
 MIT, do remember to add a reference if you find it useful :)
-
-[warning-image]: /docs/img/warning.png
-[idea-image]: /docs/img/idea.png
-[github-image]: https://img.shields.io/github/release/tbolis/react-sketch.svg
-[github-url]: https://github.com/tbolis/react-sketch/releases
-[npm-image]: https://img.shields.io/npm/v/react-sketch.svg
-[npm-url]: https://www.npmjs.com/package/react-sketch
-[downloads-image]: https://img.shields.io/npm/dm/react-sketch.svg
-[downloads-url]: https://www.npmjs.com/package/react-sketch
-[travis-image]: https://img.shields.io/travis/tbolis/react-sketch.svg
-[travis-url]: https://travis-ci.org/tbolis/react-sketch

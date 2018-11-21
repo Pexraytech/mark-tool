@@ -34,7 +34,7 @@ module.exports = function (config) {
             resolve: {
                 extensions: ['.js', '.jsx'],
                 alias: {
-                    'react-sketch': srcPath
+                    'mark-tool': srcPath
                 }
             },
             module: {
