@@ -1,4 +1,4 @@
-# react-sketch
+# mark-tool
 
 [![GitHub release][github-image]][github-url]
 [![NPM release][npm-image]][npm-url]
@@ -13,13 +13,13 @@ A Sketch tool for React based applications, backed-up by [FabricJS](http://fabri
 ## Installation
 
 ```sh
-npm install react-sketch --save
+npm install MarkTool --save
 ```
 
 or with yarn
 
 ```sh
-yarn add react-sketch
+yarn add MarkTool
 ```
 
 ### Source installation
@@ -85,22 +85,22 @@ Available tools
 The project includes a webpack server for running the examples, just run:
 
 ```sh
-git clone https://github.com/tbolis/react-sketch.git
+git clone https://github.com/Pexraytech/MarkTool.git
 yarn install
 npm start
 ```
 
 and navigate to http://localhost:23000
 
-You can as well check the live showcase here: http://tbolis.github.io/showcase/react-sketch/
+You can as well check the live showcase here: https://github.com/Pexraytech/MarkTool/
                                          
 ## Issues
 
-See https://github.com/tbolis/react-sketch/issues
+See https://github.com/Pexraytech/MarkTool/issues
 
 ## Changelog
 
-See https://github.com/tbolis/react-sketch/blob/master/CHANGELOG.md
+See https://github.com/Pexraytech/MarkTool/blob/master/CHANGELOG.md
 
 ## License
 
