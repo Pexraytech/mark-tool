@@ -12,6 +12,7 @@ import Rectangle from './rectangle'
 import Circle from './circle'
 import Pan from './pan'
 import Tool from './tools'
+import None from './none'
 
 const fabric = require('fabric').fabric;
 
@@ -73,6 +74,7 @@ class MarkTool extends PureComponent {
         this._tools[Tool.Rectangle] = new Rectangle(fabricCanvas);
         this._tools[Tool.Circle] = new Circle(fabricCanvas);
         this._tools[Tool.Pan] = new Pan(fabricCanvas)
+        this._tools[Tool.None] = new None(fabricCanvas)
     };
 
     /**
