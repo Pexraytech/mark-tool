@@ -1,12 +1,12 @@
 'use strict';
 
-import SketchField from './SketchField'
+import MarkTool from './MarkTool'
 import Tools from './tools'
 
-export {SketchField}
+export {MarkTool}
 export {Tools}
 
 export default {
-    SketchField,
+    MarkTool,
     Tools
 };

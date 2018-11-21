@@ -6,7 +6,7 @@
 import React from 'react';
 
 import TestUtils from 'react-dom/test-utils';
-import SketchField from '../src/SketchField';
+import MarkTool from '../src/MarkTool';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -32,19 +32,19 @@ function objectFromDrag(canvas, from = {x: 0, y: 0}, to = {x: 10, y: 10}, id) {
     return newObj;
 }
 
-describe('SketchField', () => {
+describe('MarkTool', () => {
 
     it('Loads Normally', () => {
-        require('../src/SketchField')
+        require('../src/MarkTool')
     });
 
     it('Contains canvas tag', () => {
-        let sketch = TestUtils.renderIntoDocument(<SketchField/>);
+        let sketch = TestUtils.renderIntoDocument(<MarkTool/>);
         expect(TestUtils.findRenderedDOMComponentWithTag(sketch, 'canvas')).to.exist;
     });
 
     it('Drag to create rectangle', () => {
-        const sketch = TestUtils.renderIntoDocument(<SketchField tool={'rectangle'}/>);
+        const sketch = TestUtils.renderIntoDocument(<MarkTool tool={'rectangle'}/>);
         const canvas = sketch._fc;
         expect(canvas).to.exist;
 
@@ -79,7 +79,7 @@ describe('SketchField', () => {
     });
 
     it('Undo/Redo for multiple rectangles add to canvas', () => {
-        const sketch = TestUtils.renderIntoDocument(<SketchField tool={'rectangle'}/>);
+        const sketch = TestUtils.renderIntoDocument(<MarkTool tool={'rectangle'}/>);
         const canvas = sketch._fc;
         expect(canvas).to.exist;
 
@@ -108,7 +108,7 @@ describe('SketchField', () => {
     });
 
     it('Undo/Redo for multiple modification for single rectangle', () => {
-        const sketch = TestUtils.renderIntoDocument(<SketchField tool={'rectangle'}/>);
+        const sketch = TestUtils.renderIntoDocument(<MarkTool tool={'rectangle'}/>);
         const canvas = sketch._fc;
         expect(canvas).to.exist;
 

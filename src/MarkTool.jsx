@@ -18,7 +18,7 @@ const fabric = require('fabric').fabric;
 /**
  * Sketch Tool based on FabricJS for React Applications
  */
-class SketchField extends PureComponent {
+class MarkTool extends PureComponent {
 
     static propTypes = {
         // the color of the line
@@ -573,4 +573,4 @@ class SketchField extends PureComponent {
     }
 }
 
-export default SketchField
+export default MarkTool

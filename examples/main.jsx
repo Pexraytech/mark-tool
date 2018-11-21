@@ -35,7 +35,7 @@ import dataJson from './data.json';
 import dataJsonControlled from './data.json.controlled';
 import dataUrl from './data.url';
 
-import {SketchField, Tools} from '../src';
+import {MarkTool, Tools} from '../src';
 import DropZone from 'react-dropzone';
 
 const styles = {
@@ -301,7 +301,7 @@ class SketchFieldDemo extends React.Component {
 
                             {/* Sketch area */}
 
-                            <SketchField
+                            <MarkTool
                                 name='sketch'
                                 className='canvas-area'
                                 ref={(c) => this._sketch = c}

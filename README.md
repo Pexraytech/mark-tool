@@ -30,15 +30,15 @@ Tested with node versions 6,7,8.
 
 ## Usage
 
-Import the relevant SketchField component and use it, you can find more on the examples folder of the project
+Import the relevant MarkTool component and use it, you can find more on the examples folder of the project
 
 ```javascript
-import {SketchField, Tools} from 'react-sketch';
+import {MarkTool, Tools} from 'react-sketch';
 
-class SketchFieldDemo extends React.Component {
+class MarkToolDemo extends React.Component {
      render() {
         return (
-            <SketchField width='1024px' 
+            <MarkTool width='1024px' 
                          height='768px' 
                          tool={Tools.Pencil} 
                          lineColor='black'
