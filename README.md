@@ -1,14 +1,6 @@
 # mark-tool
 
-[![GitHub release][github-image]][github-url]
-[![NPM release][npm-image]][npm-url]
-[![NPM downloads][downloads-image]][downloads-url]
-[![Build status][travis-image]][travis-url]
-
-A Sketch tool for React based applications, backed-up by [FabricJS](http://fabricjs.com/)
-
-![idea-image] _Please note that this module is still in development! Feel free to send me enhancements and ideas :)_
-
+A mark tool for React based applications, backed-up by [FabricJS](http://fabricjs.com/)
 
 ## Installation
 
