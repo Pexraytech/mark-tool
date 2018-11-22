@@ -50,8 +50,8 @@ class MarkTool extends PureComponent {
     };
 
     static defaultProps = {
-        lineColor: 'black',
-        lineWidth: 10,
+        lineColor: 'red',
+        lineWidth: 3,
         fillColor: 'transparent',
         backgroundColor: 'transparent',
         opacity: 1.0,
@@ -63,7 +63,7 @@ class MarkTool extends PureComponent {
     };
 
     state = {
-        parentWidth: 550,
+        parentWidth: 1024,
         action: true
     };
     _initTools = (fabricCanvas) => {
