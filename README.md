@@ -13,13 +13,13 @@ A Sketch tool for React based applications, backed-up by [FabricJS](http://fabri
 ## Installation
 
 ```sh
-npm install MarkTool --save
+npm install mark-tool --save
 ```
 
 or with yarn
 
 ```sh
-yarn add MarkTool
+yarn add mark-tool
 ```
 
 ### Source installation
