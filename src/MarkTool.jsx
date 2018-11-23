@@ -46,7 +46,11 @@ class MarkTool extends PureComponent {
         // Specify some width correction which will be applied on auto resize
         widthCorrection: PropTypes.number,
         // Specify some height correction which will be applied on auto resize
-        heightCorrection: PropTypes.number
+        heightCorrection: PropTypes.number,
+        //parent width
+        clientWidth: PropTypes.number,
+        //parent height
+        clientHeight: PropTypes.number
     };
 
     static defaultProps = {
@@ -59,11 +63,12 @@ class MarkTool extends PureComponent {
         tool: Tool.Pencil,
         widthCorrection: 2,
         heightCorrection: 0,
-        forceValue: false
+        forceValue: false,
+        clientWidth: 1097,
+        clientHeight: 912
     };
 
     state = {
-        parentWidth: 1024,
         action: true
     };
     _initTools = (fabricCanvas) => {
@@ -208,21 +213,19 @@ class MarkTool extends PureComponent {
      */
     _resize = (e) => {
         if (e) e.preventDefault();
-        let {widthCorrection, heightCorrection} = this.props;
+        let {
+            widthCorrection,
+            heightCorrection,
+            clientWidth,
+            clientHeight
+        } = this.props;
         let canvas = this._fc;
-        let {offsetWidth, clientHeight} = this._container;
         let prevWidth = canvas.getWidth();
         let prevHeight = canvas.getHeight();
-        let wfactor = ((offsetWidth - widthCorrection) / prevWidth).toFixed(2);
+        let wfactor = ((clientWidth - widthCorrection) / prevWidth).toFixed(2);
         let hfactor = ((clientHeight - heightCorrection) / prevHeight).toFixed(2);
-        canvas.setWidth(offsetWidth - widthCorrection);
+        canvas.setWidth(clientWidth - widthCorrection);
         canvas.setHeight(clientHeight - heightCorrection);
-        if (canvas.backgroundImage) {
-            // Need to scale background images as well
-            let bi = canvas.backgroundImage;
-            bi.width = bi.width * wfactor;
-            bi.height = bi.height * hfactor
-        }
         let objects = canvas.getObjects();
         for (let i in objects) {
             let obj = objects[i];
@@ -240,9 +243,6 @@ class MarkTool extends PureComponent {
             obj.top = tempTop;
             obj.setCoords()
         }
-        this.setState({
-            parentWidth: offsetWidth
-        });
         canvas.renderAll();
         canvas.calcOffset();
     };
@@ -488,15 +488,6 @@ class MarkTool extends PureComponent {
 
     componentWillUnmount = () => window.removeEventListener('resize', this._resize);
 
-    componentDidUpdate = (prevProps, prevState) => {
-        if (this.state.parentWidth !== prevState.parentWidth
-            || this.props.width !== prevProps.width
-            || this.props.height !== prevProps.height) {
-
-            this._resize()
-        }
-    };
-
     componentWillReceiveProps = (nextProps) => {
         if (this.props.tool !== nextProps.tool) {
             this._selectedTool = this._tools[nextProps.tool] || this._tools[Tool.Pencil]
@@ -556,22 +547,13 @@ class MarkTool extends PureComponent {
             height
         } = this.props;
 
-        let canvasDivStyle = Object.assign({}, style ? style : {},
-            width ? {width: width} : {},
-            height ? {height: height} : {height: 512});
-
         return (
-            <div
-                className={className}
-                ref={(c) => this._container = c}
-                style={canvasDivStyle}>
-                <canvas
-                    id={uuid4()}
-                    ref={(c) => this._canvas = c}>
-                    Sorry, Canvas HTML5 element is not supported by your browser
-                    :(
-                </canvas>
-            </div>
+            <canvas
+                width= {clientWidth}
+                height= {clientHeight}
+                id={uuid4()}
+                ref={(c) => this._canvas = c}>
+            </canvas>
         )
     }
 }
