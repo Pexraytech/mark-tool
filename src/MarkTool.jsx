@@ -540,13 +540,6 @@ class MarkTool extends PureComponent {
     };
 
     render = () => {
-        let {
-            className,
-            style,
-            width,
-            height
-        } = this.props;
-
         return (
             <canvas
                 width= {clientWidth}
