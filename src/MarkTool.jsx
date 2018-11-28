@@ -213,14 +213,18 @@ class MarkTool extends PureComponent {
      */
     _resize = (e) => {
         if (e) e.preventDefault();
-        let {widthCorrection, heightCorrection} = this.props;
+        let {
+            widthCorrection,
+            heightCorrection,
+            clientWidth,
+            clientHeight
+        } = this.props;
         let canvas = this._fc;
-        let {offsetWidth, clientHeight} = this._container;
         let prevWidth = canvas.getWidth();
         let prevHeight = canvas.getHeight();
-        let wfactor = ((offsetWidth - widthCorrection) / prevWidth).toFixed(2);
+        let wfactor = ((clientWidth - widthCorrection) / prevWidth).toFixed(2);
         let hfactor = ((clientHeight - heightCorrection) / prevHeight).toFixed(2);
-        canvas.setWidth(offsetWidth - widthCorrection);
+        canvas.setWidth(clientWidth - widthCorrection);
         canvas.setHeight(clientHeight - heightCorrection);
         let objects = canvas.getObjects();
         for (let i in objects) {
@@ -540,32 +544,9 @@ class MarkTool extends PureComponent {
     };
 
     render = () => {
-        render = () => {
-            let {
-                className,
-                style,
-                width,
-                height
-            } = this.props;
-    
-            let canvasDivStyle = Object.assign({}, style ? style : {},
-                width ? {width: width} : {},
-                height ? {height: height} : {height: 912});
-    
-            return (
-                <div
-                    className={className}
-                    ref={(c) => this._container = c}
-                    style={canvasDivStyle}>
-                    <canvas
-                        id={uuid4()}
-                        ref={(c) => this._canvas = c}>
-                        Sorry, Canvas HTML5 element is not supported by your browser
-                        :(
-                    </canvas>
-                </div>
-            )
-        }
+        return (
+            <canvas id={uuid4()} ref={(c) => this._canvas = c}></canvas>
+        )
     }
 }
 
