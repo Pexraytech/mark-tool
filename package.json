@@ -1,6 +1,6 @@
 {
   "name": "mark-tool",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Sketch Element for React based applications, backed-up by fabricjs as its core",
   "keywords": [
     "react",
@@ -97,10 +97,12 @@
     "webpack-dev-server": "^2.11.1",
     "weinre": "^2.0.0-pre-I0Z7U9OV"
   },
+  "dependencies": {
+    "react-dropzone": "4.2.7"
+  },
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-dropzone": "4.2.7"
+    "react-dom": "^16.2.0"
   }
 }
