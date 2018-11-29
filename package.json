@@ -1,6 +1,6 @@
 {
   "name": "mark-tool",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Sketch Element for React based applications, backed-up by fabricjs as its core",
   "keywords": [
     "react",
@@ -29,13 +29,14 @@
     "build": "NODE_ENV=production webpack --config webpack.library.cfg.js --display-modules",
     "build:light": "babel ./src --out-dir ./lib",
     "build:examples": "NODE_ENV=production webpack --config webpack.examples.cfg.js",
-    "prepublish": "npm run test && npm run build",
+    "prepublish": "npm run test && npm rebuild phantom-prebuilt && npm run build",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "start": "node webpack.server.js",
     "start:debug": "weinre --boundHost `my-local-ip` ",
     "test": "karma start karma.config.js",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "postinstall": "node node_modules/phantomjs-prebuilt/install.js"
   },
   "engines": {
     "node": ">= 6"
