@@ -494,7 +494,7 @@ class MarkTool extends PureComponent {
 
     componentWillReceiveProps = (nextProps) => {
         if (this.props.tool !== nextProps.tool) {
-            this._selectedTool = this._tools[nextProps.tool] || this._tools[Tool.Pencil]
+            this._selectedTool = this._tools[nextProps.tool] || this._tools[Tool.Line]
         }
 
         //Bring the cursor back to default if it is changed by a tool
